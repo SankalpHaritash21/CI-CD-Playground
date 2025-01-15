@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My Interactive Website</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="hello">Hello, World!</h1>
+      <p id="intro">
+        Welcome to my interactive website. Let's make things happen!
+      </p>
+      <button id="action-btn">Click Me!</button>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 | Created with ❤️ by Your Name</p>
+    </footer>
+
+    <script>
+      gsap.from("#hello", {
+        opacity: 0,
+        y: -50,
+        duration: 1.5,
+        ease: "bounce.out",
+      });
+
+      gsap.from("#intro", {
+        opacity: 0,
+        x: -100,
+        duration: 1.5,
+        delay: 1,
+        ease: "power2.out",
+      });
+
+      gsap.from("#action-btn", {
+        opacity: 0,
+        scale: 0,
+        duration: 1.5,
+        delay: 2,
+        ease: "elastic.out(1, 0.75)",
+      });
+    </script>
+  </body>
+</html>
